@@ -7,10 +7,8 @@ class ApiInterceptor extends Interceptor {
   Future<dynamic> onRequest(
       RequestOptions options, RequestInterceptorHandler handler) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    final token = prefs.getString(Constants.token);
 
     if (options.headers.containsKey('requireToken')) {
-      options.headers.addAll({"Authorization": "Bearer $token"});
       // remove the auxilliary header
       options.headers.remove('requireToken');
     } else {
