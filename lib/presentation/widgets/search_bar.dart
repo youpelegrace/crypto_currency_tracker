@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_3/presentation/ui/vm/coin_vm.dart';
-import 'package:flutter_application_3/presentation/ui/widgets/field_input.dart';
+import 'package:flutter_application_3/core/services/model/coin_model.dart';
+import 'package:flutter_application_3/presentation/widgets/field_input.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:just_debounce_it/just_debounce_it.dart';
 
-class SearchBar extends HookConsumerWidget {
+class SearchBar extends StatelessWidget {
   const SearchBar({
+    this.onTextEntered,
     Key? key,
   }) : super(key: key);
+  final ValueChanged<String>? onTextEntered;
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final isEnabled = ref.watch(getCoinProvider);
+  Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 30, right: 30),
+      padding: const EdgeInsets.only(left: 20, right: 20),
       child: TextField(
         style: TextStyle(color: Colors.white),
         decoration: fieldInputDecoration(
@@ -27,12 +28,11 @@ class SearchBar extends HookConsumerWidget {
               color: Colors.white,
             ),
             contentPadding: EdgeInsets.symmetric(vertical: 17, horizontal: 10)),
-        onChanged: (value) {
-          print(value);
-          Debounce.seconds(
-              1, () => ref.read(getCoinProvider.notifier).searchBy(value));
-          print(value);
-        },
+        onChanged: onTextEntered,
+        // (value) {
+        //   _filterClients(value);
+        //   listState.value = value;
+        // },
         onEditingComplete: () => FocusScope.of(context).unfocus(),
       ),
     );

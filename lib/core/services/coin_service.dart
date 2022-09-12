@@ -28,9 +28,9 @@ class CoinService {
   }
 
   Future getCoin([String ids = '']) async {
-    final url = 'v3/coins/markets?vs_currency=btc&ids=$ids';
+    final url = 'v3/coins/markets?vs_currency=btc';
 
-    var queryParameters = {"SearchBy": ids};
+    var queryParameters = {"ids": ids};
 
     try {
       final response = await _dio.get(url, queryParameters: queryParameters);

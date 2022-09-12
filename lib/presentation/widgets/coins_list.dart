@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_3/core/services/model/coin_model.dart';
-import 'package:flutter_application_3/presentation/ui/live_prices.dart';
 import 'package:flutter_application_3/presentation/ui/live_statistic.dart';
 import 'package:intl/intl.dart';
 
@@ -13,8 +12,13 @@ class CoinsList extends StatelessWidget {
     var format = NumberFormat("###,###", "en_US");
     return GestureDetector(
       onTap: () {
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => LiveStats(id: btc.id!)));
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => LiveStats(
+                      id: btc.id!,
+                      item: btc,
+                    )));
       },
       child: Container(
         width: double.infinity,
@@ -70,7 +74,6 @@ class CoinsList extends StatelessWidget {
                 children: [
                   Text(
                     "\$" + format.format(btc.marketCap),
-                    // overflow: TextOverflow.clip,
                     style: TextStyle(color: Colors.white, fontSize: 18),
                   ),
                   SizedBox(
