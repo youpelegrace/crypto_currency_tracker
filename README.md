@@ -12,7 +12,8 @@ Riverpod statemanagement was used to manage the application state and a public c
 
 
 
-## ss
+## Screenshots
+
 <div align="center">
   <img src="/ss/ss2.png" width="300px" height="600"/>
   <img src="/ss/ss1.png" width="300px" height="600"/>
