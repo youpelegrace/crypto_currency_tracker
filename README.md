@@ -1,16 +1,21 @@
-# flutter_application_3
+# Crypto tracking application
 
-A new Flutter project.
+A mobile application that shows all available crypto currencies with their market price. 
 
-## Getting Started
+It shows the current chart of value and it can be shared to friends.
 
-This project is a starting point for a Flutter application.
+There is a search feature to search for desired currency and shimmer loading effect to load data.
 
-A few resources to get you started if this is your first Flutter project:
+It was developed using flutter and runs in both android and IOS devices.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+Riverpod statemanagement was used to manage the application state and a public crypto API was consumed for full functionality.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+
+## ss
+<div align="center">
+  <img src="/ss/ss2.png" width="300px" height="600"/>
+  <img src="/ss/ss1.png" width="300px" height="600"/>
+  <img src="/ss/ss3.png" width="300px" height="600"/>
+  <img src="/ss/ss4.png" width="300px" height="600"/>
+ </div>
