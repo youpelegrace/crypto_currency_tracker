@@ -1,8 +1,8 @@
 # Crypto tracking application
 
-A mobile application that shows all available crypto currencies with their market price. 
+A mobile application that shows all available crypto currencies with their market price and value rate. 
 
-It shows the current chart of value and it can be shared to friends.
+It shows the current chart of value rate and it can be shared to friends.
 
 There is a search feature to search for desired currency and shimmer loading effect to load data.
 
